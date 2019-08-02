@@ -16,7 +16,6 @@ UI_URL=https://launchpad.net/plone/5.2/5.2/+download/Plone-5.2.0-UnifiedInstalle
 UI_TARBALL=Plone-5.2.0-UnifiedInstaller-r1.tgz
 UI_DIR=Plone-5.2.0-UnifiedInstaller-r1
 
-
 # make sure dirs exist
 mkdir -p $CACHE_DIR
 mkdir -p $INSTALL_DIR
