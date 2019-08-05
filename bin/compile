@@ -27,21 +27,6 @@ if [ -d $CACHE_DIR/bin ]; then
     cp -r $CACHE_DIR/eggs  $BUILD_DIR/
     cp -r $CACHE_DIR/parts  $BUILD_DIR/
     cp -r $CACHE_DIR/var  $BUILD_DIR/
-else
-    echo "Cache empty, let's fix that" | indent
-    echo "Prime with Unified Installer cache" | indent
-    curl -OL $UI_URL
-    echo "Unpacking Installer" | indent
-    tar xfz $UI_TARBALL
-    cd $UI_DIR
-    echo "Unpacking Installer cache" | indent
-    tar xfj packages/buildout-cache.tar.bz2
-    echo "Moving cache eggs to build directory" | indent
-    cp -r buildout-cache/eggs $BUILD_DIR/
-    echo "Clean up Installer files" | indent
-    cd ..
-    rm -rf $UI_TARBALL $UI_DIR
-
 fi
 
 echo "-----> Read BUILDOUT_CFG from env vars, or use default"
